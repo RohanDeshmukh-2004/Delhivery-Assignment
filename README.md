@@ -112,7 +112,7 @@ System Architecture Pipeline
 
 
 
-🚀 Launch Instructions (Simulation, Navigation & Control)
+## Launch Instructions (Simulation, Navigation & Control)
 1. Build and Source Workspace
 Before launching any nodes, ensure the workspace is built and sourced correctly:
 
