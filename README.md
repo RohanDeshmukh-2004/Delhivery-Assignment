@@ -100,7 +100,7 @@ System Architecture Pipeline
                                ▼
                    [ /amr_X/cmd_vel (Robot) ]
 
-
+```text
 
 🚀 Launch Instructions (Simulation, Navigation & Control)
 1. Build and Source Workspace
