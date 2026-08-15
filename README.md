@@ -54,8 +54,8 @@ gazebo_test_ws/
             └── warehouse_ramps.world      # Gazebo world with ramps, aisles, dynamic actors
 
 
+```text
 System Architecture Pipeline
-------------------------------------------------------------------------------------------------------------------------------------------
 [ Dynamic Obstacles / Ramps ]                                                                                                               |
              │
       ┌──────┴──────┐                                                                                                                            
