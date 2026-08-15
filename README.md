@@ -99,3 +99,46 @@ System Architecture Pipeline
                                │
                                ▼
                    [ /amr_X/cmd_vel (Robot) ]
+
+
+
+🚀 Launch Instructions (Simulation, Navigation & Control)
+1. Build and Source Workspace
+Before launching any nodes, ensure the workspace is built and sourced correctly:
+
+Bash
+cd ~/gazebo_test_ws
+colcon build --symlink-install
+source install/setup.bash
+2. Launch the Entire Stack (Main Orchestration)
+To launch the Gazebo simulation environment, spawn both AMRs, and initialize the custom control stack (BSP validation, safety overrides, and traffic controllers) simultaneously, run:
+
+Bash
+ros2 launch warehouse_nav warehouse_sim.launch.py
+3. Launch Navigation and SLAM (Modular)
+If you prefer to bring up the mapping and navigation modules independently of the main simulation, open new terminals (remembering to source the workspace in each) and execute:
+
+Initialize the Namespaced Nav2 Stack:
+
+Bash
+ros2 launch warehouse_nav navigation.launch.py
+Initialize the SLAM and Map-Merge Pipeline:
+
+Bash
+ros2 launch warehouse_nav slam_fusion.launch.py
+4. Manual Control Intercepts
+With the full autonomous stack running, you can manually command the robots using the pre-configured twist multiplexers. Higher-priority safety nodes will still override these manual commands if an imminent collision is detected.
+
+Teleoperate AMR-1:
+
+Bash
+ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r /cmd_vel:=/amr_1/cmd_vel
+Teleoperate AMR-2:
+
+Bash
+ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r /cmd_vel:=/amr_2/cmd_vel
+Save Map Output
+To save your SLAM occupancy grid once the environment has been fully mapped:
+
+Bash
+ros2 run nav2_map_server map_saver_cli -f ~/gazebo_test_ws/src/warehouse_nav/maps/warehouse_world
