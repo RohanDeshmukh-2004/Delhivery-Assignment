@@ -1,6 +1,6 @@
 # Multi-Robot Logistics Stack (ROS 2 / Gazebo)
 
-A multi-robot logistics demonstration built using ROS 2 and Gazebo featuring dual Autonomous Mobile Robots (`AMR-1` and `AMR-2`), isolated topic namespacing, custom TF frame prefixing, RViz2 visualization, and 2D SLAM mapping.
+A multi-robot logistics demonstration built using ROS 2 and Gazebo featuring dual Autonomous Mobile Robots (`AMR-1` and `AMR-2`), isolated topic namespacing, custom TF frame prefixing, RViz2 visualization, dynamic obstacle avoidance, and 2D SLAM mapping.
 
 ## Key Features
 
@@ -11,6 +11,7 @@ A multi-robot logistics demonstration built using ROS 2 and Gazebo featuring dua
 
 ## Repository Structure
 
+```text
 gazebo_test_ws/
 └── src/
     └── warehouse_nav/
