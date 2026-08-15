@@ -20,7 +20,27 @@ cd ~/gazebo_test_ws
 colcon build --symlink-install
 source install/setup.bashbo_test_ws/src/warehouse_nav/maps/warehouse_world
 
+### 2. Launch the Entire Stack (Main Orchestration)
+ros2 launch warehouse_nav warehouse_sim.launch.py
 
+3.Launch Navigation and SLAM (Modular)
+ Initialize the Namespaced Nav2 Stack:
+  ros2 launch warehouse_nav navigation.launch.py
+
+ Initialize the SLAM and Map-Merge Pipeline:
+   ros2 launch warehouse_nav slam_fusion.launch.py
+
+4. Manual Control Intercepts
+  Teleoperate AMR-1:
+  ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r /cmd_vel:=/amr_1/cmd_vel
+  
+  Teleoperate AMR-2:
+  ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r /cmd_vel:=/amr_2/cmd_vel
+
+5.Save Map Output
+  ros2 run nav2_map_server map_saver_cli -f ~/gazebo_test_ws/src/warehouse_nav/maps/warehouse_world
+
+  
 ## Repository Structure
 
 ```text
