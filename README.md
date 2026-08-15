@@ -9,6 +9,17 @@ A multi-robot logistics demonstration built using ROS 2 and Gazebo featuring dua
 * **SLAM Integration:** 2D mapping and occupancy grid generation powered by `slam_toolbox`.
 * **Flexible Control:** Options to drive individual robots or mirror velocity commands to control both simultaneously.
 
+
+## 🚀 Launch Instructions (Simulation, Navigation & Control)
+
+### 1. Build and Source Workspace
+Before launching any nodes, ensure the workspace is built and sourced correctly:
+
+```bash
+cd ~/gazebo_test_ws
+colcon build --symlink-install
+source install/setup.bashbo_test_ws/src/warehouse_nav/maps/warehouse_world
+
 ## Repository Structure
 
 ```text
@@ -111,13 +122,3 @@ System Architecture Pipeline
 
 
 
-
-## 🚀 Launch Instructions (Simulation, Navigation & Control)
-
-### 1. Build and Source Workspace
-Before launching any nodes, ensure the workspace is built and sourced correctly:
-
-```bash
-cd ~/gazebo_test_ws
-colcon build --symlink-install
-source install/setup.bashbo_test_ws/src/warehouse_nav/maps/warehouse_world
