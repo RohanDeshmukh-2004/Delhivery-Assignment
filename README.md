@@ -20,6 +20,7 @@ cd ~/gazebo_test_ws
 colcon build --symlink-install
 source install/setup.bashbo_test_ws/src/warehouse_nav/maps/warehouse_world
 
+
 ## Repository Structure
 
 ```text
